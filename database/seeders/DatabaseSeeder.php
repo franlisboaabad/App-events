@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Artista;
 use App\Models\User;
 use App\Models\Cliente;
 use App\Models\Customer;
@@ -37,5 +38,6 @@ class DatabaseSeeder extends Seeder
         User::factory()->count(10)->create();
         Cliente::factory()->count(10)->create();
         TipoEquipo::factory()->count(10)->create();
+        Artista::factory()->count(10)->create();
     }
 }

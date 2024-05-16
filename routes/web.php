@@ -11,6 +11,7 @@ use App\Http\Controllers\EquipoController;
 use App\Http\Controllers\OrdenDeServicioController;
 use App\Http\Controllers\ProyectoController;
 use App\Http\Controllers\TareaController;
+use App\Http\Controllers\ArtistaController;
 use App\Models\Equipment;
 use App\Models\OrdenDeServicio;
 use Illuminate\Support\Facades\Route;
@@ -54,6 +55,11 @@ Route::resource('proyectos', ProyectoController::class)->middleware('auth');
 Route::resource('actividades', ActividadController::class)->middleware('auth')->parameters(['actividades' => 'actividad']);
 Route::resource('tareas', TareaController::class)->middleware('auth');
 
+
+/* routes v3.0 Eventos */
+
+Route::resource('artistas', ArtistaController::class);
+Route::post('/artista/{id}', [ArtistaController::class, 'getArtistaData'])->name('artista.data');
 
 
 
